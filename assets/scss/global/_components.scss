@@ -1,0 +1,21 @@
+// TITLE
+
+.title {
+   position: relative;
+   color: #222;
+   @include adaptiveValue('font-size', 36, 24);
+   font-weight: 700;
+   line-height: 1.2;
+   &::before {
+      content: '';
+      position: absolute;
+      width: 90px;
+      left: calc(50% - 45px);
+      bottom: -10px;
+      height: 2px;
+      background-color: #E74C3C;
+   }
+}
+
+
+

@@ -1,0 +1,59 @@
+// BURGER-menu
+
+// BURGER-menu
+.header__burger {
+   width: 44px;
+   height: 44px;
+   border-radius: 8px;
+   background-color: transparent;
+   position: relative;
+   flex-shrink: 0;
+   z-index: 20;
+   border: 2px solid $mainFontColor;
+   display: none;
+      span,
+      &::before,
+      &::after {
+         content: "";
+         transition: all 0.1s ease 0s;
+         right: 15%;
+         position: absolute;
+         width: 70%;
+         height: 2px;
+         background-color: $mainFontColor;
+      }
+      &::before {
+         top: 12px;
+      }
+      &::after {
+         bottom: 12px;
+      }
+
+      span {
+         top: calc(50% - 1px);
+      }
+
+     .burger-open  & {
+         span {
+            width: 0;
+         }
+
+         &::before {
+            top: calc(50% - 1px);
+            transform: rotate(135deg);
+         }
+
+         &::after {
+            bottom: calc(50% - 1px);
+            transform: rotate(225deg);
+         }
+      }
+   @media (max-width: 625px) {
+      display: block;
+   }  
+}
+
+.no-scroll {
+   overflow: hidden;
+}
+
