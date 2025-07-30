@@ -34,10 +34,6 @@ if(testimonialsSlider) {
 		  clickable: true,
 		},
 	
-		// navigation: {
-		//   nextEl: '.hero__arrow--next',
-		//   prevEl: '.hero__arrow--prev',
-		// },
 	});
 
 }
