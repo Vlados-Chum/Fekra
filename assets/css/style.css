@@ -3181,18 +3181,18 @@ textarea {
 }
 @media (min-width: 83.75em) {
   .footer .body-footer__list {
-    gap: 1.25rem;
+    gap: 2.5rem;
   }
 }
 @media (min-width: 20em) and (max-width: 83.75em) {
-  @supports (gap: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
+  @supports (gap: clamp( 1.25rem , 0.8578431373rem  +  1.9607843137vw , 2.5rem )) {
     .footer .body-footer__list {
-      gap: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem );
+      gap: clamp( 1.25rem , 0.8578431373rem  +  1.9607843137vw , 2.5rem );
     }
   }
-  @supports not (gap: clamp( 1.25rem , 1.25rem  +  0vw , 1.25rem )) {
+  @supports not (gap: clamp( 1.25rem , 0.8578431373rem  +  1.9607843137vw , 2.5rem )) {
     .footer .body-footer__list {
-      gap: calc(1.25rem + 0 * (100vw - 20rem) / 63.75);
+      gap: calc(1.25rem + 1.25 * (100vw - 20rem) / 63.75);
     }
   }
 }

@@ -1422,7 +1422,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-start;
-			@include adaptiveValue('gap', 20, 20);
+			@include adaptiveValue('gap', 40, 20);
 			@media (max-width: 768px) {
 				flex-wrap: wrap;
 				row-gap: 30px;
