@@ -731,6 +731,22 @@ textarea {
     gap: 0.625rem;
   }
 }
+@media (max-width: 678px) {
+  .history__images {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
+  }
+}
 @media (min-width: 83.75em) {
   .history .images-list {
     margin-bottom: 3.375rem;
@@ -751,6 +767,26 @@ textarea {
 @media (max-width: 20em) {
   .history .images-list {
     margin-bottom: 1.875rem;
+  }
+}
+@media (max-width: 678px) {
+  .history .images-list__item {
+    max-width: 570px;
+  }
+}
+.history .images-list__item:nth-child(2) {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+@media (max-width: 678px) {
+  .history .images-list__item--small {
+    max-width: 47%;
+  }
+}
+@media (max-width: 390px) {
+  .history .images-list__item--small {
+    max-width: 46%;
   }
 }
 .history .list-history {
@@ -1186,6 +1222,7 @@ textarea {
           align-items: flex-start;
   gap: 26px;
 }
+
 .card-team {
   position: relative;
   text-align: center;
@@ -1584,6 +1621,7 @@ textarea {
     font-size: 0.875rem;
   }
 }
+
 .tabs__navigation {
   display: -webkit-box;
   display: -ms-flexbox;
