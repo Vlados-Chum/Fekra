@@ -1,51 +1,38 @@
 "use strict";
 
-// Обработчик клика
+// BURGER MENU
 document.addEventListener("click", handleClick);
 
 function handleClick(e) {
     const targetElement = e.target;
-
-    // Проверка, если клик был по бургер-меню
     if (targetElement.closest('.header__burger')) {
-        // Переключаем класс burger-open
         document.body.classList.toggle('burger-open');
-        // Добавляем или удаляем класс для блокировки прокрутки
         document.body.classList.toggle('no-scroll');
     }
 }
 
-
-
 // SLIDER TESTIMONIALS
 
 const testimonialsSlider = document.querySelector('.testimonials');
-
 if(testimonialsSlider) {
-
 	const swiper = new Swiper('.testimonials__container', {
 		loop: true,
 		autoHeight: true,
 		speed: 1000,
 		
-	
 		pagination: {
 		  el: '.swiper-pagination',
 		  clickable: true,
 		},
-	
 	});
-
 }
 
 
 // TABS
 
 document.addEventListener("click", tabsClick);
-
 function tabsClick(e) {
     const targetElement = e.target;
-    
     if (targetElement.closest('[data-tabs-button]')) {
         const currentElement = targetElement.closest('[data-tabs-button]');
         setTab(currentElement);
@@ -77,44 +64,10 @@ function setTab(tabElement) {
     }
 }
 
-
-// ЭФФЕКТ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ
-document.addEventListener('DOMContentLoaded', isInViewport);
-
-// Функция для проверки видимости элемента
-function isInViewport(element) {
-	const rect = element.getBoundingClientRect();
-	return (
-		 rect.top <= window.innerHeight &&
-		 rect.bottom >= 0
-	);
-}
-
-// Обработчик для скролла
-function handleScroll() {
-	const hiddenElements = document.querySelectorAll('.hidden');
-	hiddenElements.forEach(element => {
-		 if (isInViewport(element)) {
-			  element.classList.add('visible'); // Добавляем класс для анимации
-			  element.classList.remove('hidden'); // Убираем "скрытость"
-		 }
-	});
-}
-
-// Привязываем обработчик к событию scroll
-window.addEventListener('scroll', handleScroll);
-
-// Инициализация: вызываем handleScroll, чтобы проверить элементы, уже видимые на экране
-handleScroll();
-
-
-
 // SLIDER BLOG
 
 const blogSlider = document.querySelector('.blog');
-
 if(blogSlider) {
-
 	const swiperBlog = new Swiper('.blog__body', {
 		loop: true,
 		autoHeight: true,
@@ -122,32 +75,24 @@ if(blogSlider) {
         slidesPerView: 2,
         spaceBetween: 57,
 		
-	
 		pagination: {
 		  el: '.swiper-pagination',
 		  clickable: true,
 		},
 
         breakpoints: {
-      // Настройки для экранов шириной 768px и меньше
-      320: {
-        slidesPerView: 1,  // Показывать один слайд за раз
-      },
-      // Дополнительно, можно указать другие точки преломления
-      768: {
-        slidesPerView: 2,  // Показывать два слайда на больших экранах
-      }
-    }
-	
-		// navigation: {
-		//   nextEl: '.hero__arrow--next',
-		//   prevEl: '.hero__arrow--prev',
-		// },
+        320: {
+          slidesPerView: 1,  
+        },
+        
+        768: {
+          slidesPerView: 2,  
+        }
+        }
 	});
-
 }
 
-// СЧЕТЧИК, СРАБАТЫВАЮЩИЙ ПРИ ПОПАДАНИИ В ВИДИМУЮ ОБЛАСТЬ ЭКРАНА
+// COUNTER WHEN IN VIEWPORT
 
 document.addEventListener("DOMContentLoaded", function() {
     // Функция для анимации счетчика

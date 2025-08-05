@@ -1,6 +1,4 @@
 // BURGER-menu
-
-// BURGER-menu
 .header__burger {
    width: 44px;
    height: 44px;
@@ -25,6 +23,7 @@
       &::before {
          top: 12px;
       }
+
       &::after {
          bottom: 12px;
       }
@@ -48,6 +47,7 @@
             transform: rotate(225deg);
          }
       }
+      
    @media (max-width: 625px) {
       display: block;
    }  
